@@ -5,7 +5,7 @@
 ---------------------
 
 DynoV Open Metaverse Cloud, also known as DOMC, is a cloud system for managing 3D assets and 
-cloud-based Metaverse immersive applications. It provides basic functionality includes CDN, 
+cloud-based Metaverse immersive applications. It provides basic functionality includes Content Delivery Network (CDN), 
 storage management, deployment, and blockchain connectivity.
 
 ---------------------
