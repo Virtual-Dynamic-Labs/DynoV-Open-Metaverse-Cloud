@@ -3,7 +3,7 @@ package utils
 import (
 	"time"
 
-	"github.com/Virtual-Dynamic-Labs/DynoV-Open-Metaverse-Cloud/asset/internal/protocol"
+	"github.com/Virtual-Dynamic-Labs/DynoV-Open-Metaverse-Cloud/stream3/internal/protocol"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"

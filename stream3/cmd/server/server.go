@@ -17,8 +17,8 @@ import (
 
 	_ "net/http/pprof"
 
-	"github.com/Virtual-Dynamic-Labs/DynoV-Open-Metaverse-Cloud/asset/internal/testdata"
-	"github.com/Virtual-Dynamic-Labs/DynoV-Open-Metaverse-Cloud/asset/internal/utils"
+	"github.com/Virtual-Dynamic-Labs/DynoV-Open-Metaverse-Cloud/stream3/internal/testdata"
+	"github.com/Virtual-Dynamic-Labs/DynoV-Open-Metaverse-Cloud/stream3/internal/utils"
 	"github.com/lucas-clemente/quic-go"
 	"github.com/lucas-clemente/quic-go/http3"
 	"github.com/lucas-clemente/quic-go/logging"
