@@ -5,6 +5,7 @@ import (
 	"net/http"
 
 	"github.com/Virtual-Dynamic-Labs/DynoV-Open-Metaverse-Cloud/blockchain/docs"
+	clients "github.com/Virtual-Dynamic-Labs/DynoV-Open-Metaverse-Cloud/blockchain/internal/clients"
 	"github.com/Virtual-Dynamic-Labs/DynoV-Open-Metaverse-Cloud/blockchain/pkg/log"
 	"github.com/Virtual-Dynamic-Labs/DynoV-Open-Metaverse-Cloud/blockchain/pkg/storage"
 	"github.com/gin-gonic/gin"
@@ -13,9 +14,14 @@ import (
 )
 
 type Server struct {
-	Database *storage.DB
-	Router   *gin.Engine
-	Logger   log.Logger
+	Database 		*storage.DB
+	Router   		*gin.Engine
+	Web3Clients 	WebClients
+	Logger   		log.Logger
+}
+
+type WebClients struct {
+	EthClient *clients.EthClient
 }
 
 var swagHandler gin.HandlerFunc
@@ -40,7 +46,7 @@ func main() {
 	docs.SwaggerInfo.Title = "DynoV Open Metaverse Cloud - Blockchain Service"
 
 	// create root logger tagged with server version
-	logger := log.New("HubService")
+	logger := log.New("Cloud Blockchain Service")
 
 	db, err := storage.ConnectToDatabase()
 	if err != nil {
@@ -49,10 +55,16 @@ func main() {
 
 	r := gin.Default()
 
+	clients := WebClients{
+		// RPC provider URL should read from configuration file.
+		EthClient: clients.CreateEthereumClient("example-url", logger),
+	}
+
 	hubServer := Server{
-		Database: storage.NewDatabase(db),
-		Router:   r,
-		Logger:   logger,
+		Database: 	 storage.NewDatabase(db),
+		Router:   	 r,
+		Web3Clients: clients,
+		Logger:   	 logger,
 	}
 
 	hubServer.Router = hubServer.setupRouter()
@@ -82,6 +94,11 @@ func (s *Server) setupRouter() *gin.Engine {
 	})
 	v1.GET("/ping", func(c *gin.Context) {
 		c.String(http.StatusOK, "pong with v1")
+	})
+
+	alpha.GET("/getBlockNumber", func(c *gin.Context) {
+		blockNumber := s.Web3Clients.EthClient.GetBlockNumber()
+		c.String(http.StatusOK, fmt.Sprintf("Block Number: %d", blockNumber))
 	})
 
 	if swagHandler != nil {
