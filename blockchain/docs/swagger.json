@@ -1,0 +1,25 @@
+{
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "swagger": "2.0",
+    "info": {
+        "description": "This is a DynoV Open Metaverse Cloud Blockchain Service.",
+        "title": "DynoV Open Metaverse Cloud Blockchain Service",
+        "contact": {
+            "name": "Virtual Dynamic Labs Support",
+            "url": "http://www.virtualdynamiclabs.xyz",
+            "email": "michaelzhou@virtualdynamiclabs.xyz"
+        },
+        "version": "1.0"
+    },
+    "host": "localhost:8080",
+    "basePath": "/api/alpha",
+    "paths": {},
+    "securityDefinitions": {
+        "BasicAuth": {
+            "type": "basic"
+        }
+    }
+}
