@@ -1,0 +1,18 @@
+basePath: /api/alpha
+host: localhost:8080
+info:
+  contact:
+    email: michaelzhou@virtualdynamiclabs.xyz
+    name: Virtual Dynamic Labs Support
+    url: http://www.virtualdynamiclabs.xyz
+  description: This is a DynoV Open Metaverse Cloud Blockchain Service.
+  title: DynoV Open Metaverse Cloud Blockchain Service
+  version: "1.0"
+paths: {}
+schemes:
+- http
+- https
+securityDefinitions:
+  BasicAuth:
+    type: basic
+swagger: "2.0"
