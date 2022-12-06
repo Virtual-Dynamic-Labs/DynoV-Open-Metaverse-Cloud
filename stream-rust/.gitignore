@@ -1,0 +1,2 @@
+# Ignore the target directory, which contains compiled binaries and other build artifacts
+/target
