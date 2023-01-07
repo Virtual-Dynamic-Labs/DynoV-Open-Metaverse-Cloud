@@ -1,0 +1,15 @@
+[package]
+name = "virtualpod"
+version = "0.1.0"
+authors = ["Michael Zhou <michaelzhou@virtualdynamiclabs.xyz>"]
+
+[dependencies]
+libcontainer = "0.0.4"
+libcgroup = "0.3.0"
+skopeo = "1.10.0"
+libnetwork = "0.31.0"
+libstorage = "0.4.8"
+libswarm = "0.2.0"
+
+[build-dependencies]
+libc = "0.2"
