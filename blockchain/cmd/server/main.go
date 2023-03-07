@@ -29,6 +29,7 @@ var swagHandler gin.HandlerFunc
 func init() {
 	swagHandler = ginSwagger.WrapHandler(swaggerFiles.Handler)
 }
+
 // @title           DynoV Open Metaverse Cloud Blockchain Service
 // @version         1.0
 // @description     This is a DynoV Open Metaverse Cloud Blockchain Service.

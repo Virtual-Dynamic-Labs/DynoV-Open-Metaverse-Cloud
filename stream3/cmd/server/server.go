@@ -19,10 +19,10 @@ import (
 
 	"github.com/Virtual-Dynamic-Labs/DynoV-Open-Metaverse-Cloud/stream3/internal/testdata"
 	"github.com/Virtual-Dynamic-Labs/DynoV-Open-Metaverse-Cloud/stream3/internal/utils"
-	"github.com/lucas-clemente/quic-go"
-	"github.com/lucas-clemente/quic-go/http3"
-	"github.com/lucas-clemente/quic-go/logging"
-	"github.com/lucas-clemente/quic-go/qlog"
+	"github.com/quic-go/quic-go"
+	"github.com/quic-go/quic-go/http3"
+	"github.com/quic-go/quic-go/logging"
+	"github.com/quic-go/quic-go/qlog"
 )
 
 type binds []string
